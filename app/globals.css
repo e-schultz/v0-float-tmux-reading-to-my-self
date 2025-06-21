@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+/* Custom Font Classes */
+.font-marker {
+  font-family: var(--font-permanent-marker), cursive;
+}
+
+.font-typewriter {
+  font-family: var(--font-courier-prime), monospace;
+}
+
+.font-special {
+  font-family: var(--font-special-elite), cursive;
+}
+
+/* Texture Overlays */
+@layer components {
+  .texture-photocopy {
+    @apply relative;
+  }
+
+  .texture-photocopy::after {
+    content: "";
+    @apply absolute inset-0 bg-[url('/textures/photocopy.png')] opacity-30 mix-blend-overlay pointer-events-none;
+  }
+
+  .texture-noise {
+    @apply relative;
+  }
+
+  .texture-noise::after {
+    content: "";
+    @apply absolute inset-0 bg-[url('/textures/noise.png')] opacity-20 mix-blend-overlay pointer-events-none;
+  }
+}
+
+/* Workshop Card Styling */
+.workshop-card {
+  position: relative;
+  z-index: 1;
+}
+
+.workshop-card::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: 5px;
+  bottom: 5px;
+  background: linear-gradient(to right, #ff00ff, #00ffff);
+  z-index: -1;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.workshop-card:hover::before {
+  top: -8px;
+  left: -8px;
+  right: 8px;
+  bottom: 8px;
+  opacity: 0.7;
+}
+
+/* Accessibility Classes */
+.high-contrast {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+}
+
+.high-contrast a,
+.high-contrast button,
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3 {
+  color: yellow !important;
+}
+
+.high-contrast p,
+.high-contrast span,
+.high-contrast label {
+  color: white !important;
+}
+
+.high-contrast a:hover,
+.high-contrast button:hover {
+  background-color: yellow !important;
+  color: black !important;
+}
+
+.reduce-motion * {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.glitch-text {
+  position: relative;
+  animation: glitch 500ms infinite;
+  animation-timing-function: steps(2, end);
+}
+
+.glitch-text:hover {
+  animation: none;
+}
+
+/* Scanline Effect */
+.scanline {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.5) 51%, transparent 51%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  opacity: 0.15;
+}
