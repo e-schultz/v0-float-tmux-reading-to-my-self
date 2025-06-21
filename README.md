@@ -32,7 +32,7 @@ TMUX.RITUAL//STACK embodies the FLOAT principle: **boundaries as care, not exclu
 
 The interface consists of four interconnected panes that mirror the natural flow of consciousness infrastructure:
 
-\`\`\`
+```
 ┌─────────────────┬─────────────────┐
 │ readwise.       │ chat.           │
 │ highlights      │ archaeology     │
@@ -40,15 +40,15 @@ The interface consists of four interconnected panes that mirror the natural flow
 │ obsidian.       │ meta.           │
 │ vault           │ commentary      │
 └─────────────────┴─────────────────┘
-\`\`\`
+```
 
 ### Information Flow
 
-\`\`\`
+```
 Experience → Traces → echoCopy → Continuity → Highlighting
     ↓           ↓        ↓          ↓           ↓
   Ritual    Memory   Transport   Bridging   Curation
-\`\`\`
+```
 
 ## Currently Implemented
 
@@ -146,7 +146,7 @@ This project follows a **"shacks not cathedrals"** approach:
 
 ## Installation & Setup
 
-\`\`\`bash
+```
 # Clone the repository
 git clone https://github.com/e-schultz/v0-float-tmux-reading-to-my-self.git
 
@@ -157,7 +157,7 @@ npm install
 npm run dev
 
 # Open browser to localhost:3000
-\`\`\`
+```
 
 ## Contributing
 
