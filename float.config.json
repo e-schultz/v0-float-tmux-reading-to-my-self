@@ -1,0 +1,7 @@
+{
+  "projectName": "v0-float-tmux-reading-to-my-self",
+  "subdomain": "tmux-reading-to",
+  "framework": "nextjs",
+  "buildCommand": "npx next build",
+  "outputDirectory": ".next"
+}
